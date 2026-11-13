@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petualangan Seru Belajar Pengurangan</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#dff4ff;--c:#fff;--ink:#2b2d42;--b:#4cc9f0;--y:#ffd93d;--g:#7ae582;--o:#ff9f45;--p:#ff8fb1;--v:#d7c6f7;--sh:0 5px 0 rgba(43,45,66,.15);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14293a;--c:#213a50;--ink:#f1f5f9;--v:#4b4375}}
+:root[data-theme=dark]{--bg:#14293a;--c:#213a50;--ink:#f1f5f9;--v:#4b4375}
+*{box-sizing:border-box}html{scroll-padding-top:70px}
+body{margin:0;font-family:'Baloo 2','Comic Sans MS',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:20px;line-height:1.35;padding-bottom:90px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--b);color:#12263a;padding:.5rem 1rem;font-weight:800;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+#pg{height:8px;background:rgba(255,255,255,.5);border-radius:9px;flex:1;margin-left:1rem;overflow:hidden}#bar{height:100%;width:0;background:var(--y);transition:width .5s}
+main{max-width:860px;margin:auto;padding:1rem}
+.card{background:var(--c);border-radius:24px;padding:1.1rem;margin:0 0 1rem;box-shadow:var(--sh);border:3px solid var(--v)}
+.c{text-align:center}h1{font-size:2.1rem;line-height:1.1;margin:.3rem 0}h2{font-size:1.4rem;margin:.3rem 0}h3{font-size:1.5rem;margin:0 0 .4rem;color:#e07a1f}
+.hero{background:linear-gradient(160deg,#fff7c2,#cfeeff 60%,#ffd9e6);text-align:center;color:#2b2d42}
+.chars{font-size:4.5rem}.bob{display:inline-block;animation:bob 1.6s ease-in-out infinite}.bob.d{animation-delay:.5s}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+.btn{font:inherit;font-weight:800;font-size:1.05rem;border:0;border-radius:18px;padding:.6rem 1.1rem;background:var(--y);color:#2b2d42;box-shadow:var(--sh);cursor:pointer;min-height:48px;margin:.25rem}
+.btn:active{transform:translateY(4px);box-shadow:none}.btn:disabled{opacity:.45}.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:4px solid #7b2cbf}
+.btn.big{font-size:1.4rem;background:var(--o);padding:.8rem 1.6rem}.btn.s{min-width:56px;font-size:1.6rem}.btn.on{background:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}.grid .btn{display:block;width:100%;margin:0;padding:.9rem .5rem;background:var(--c);color:var(--ink);border:3px solid var(--v)}.grid .btn span{display:block;font-size:2.2rem}
+nav.f{position:fixed;left:0;right:0;bottom:0;background:var(--c);display:flex;justify-content:center;gap:.4rem;padding:.4rem .4rem calc(.4rem + env(safe-area-inset-bottom,0px));box-shadow:0 -3px 0 var(--v);z-index:5}
+.tabs{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.8rem}.tabs .btn{margin:0;padding:.4rem .8rem;background:var(--c);border:3px solid var(--v);color:var(--ink)}.tabs .btn.on{background:var(--y);color:#2b2d42}
+.bub{display:flex;gap:.6rem;align-items:center;background:var(--v);border-radius:20px;padding:.5rem .8rem;margin:.5rem 0}.av{font-size:2.4rem}.bub p{margin:0}
+.sp{border:0;background:none;font-size:1.2rem;cursor:pointer}
+.box{background:rgba(255,217,61,.2);border:3px dashed var(--y);border-radius:20px;padding:.6rem;text-align:center;min-height:70px;margin:.5rem 0}
+.it{display:inline-block;position:relative;font-size:2.3rem;margin:.1rem;transition:.5s;user-select:none}.it.x{filter:grayscale(1);transform:scale(.8) rotate(-12deg)}.it.x::after{content:'❌';position:absolute;left:.15em;top:0;font-size:2rem}
+.clk .it{cursor:pointer}
+.eq{font-size:2rem;font-weight:800;text-align:center;background:var(--y);color:#2b2d42;border-radius:16px;padding:.3rem .6rem;margin:.6rem 0}.eq:empty{display:none}
+.hid{display:none}.q{font-weight:700;font-size:1.25rem}.pill{display:inline-block;background:var(--p);color:#2b2d42;border-radius:99px;padding:.1rem .8rem;font-weight:800}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;text-align:center}.three div{border-radius:16px;padding:.4rem;color:#2b2d42;font-weight:700}.three b{font-size:2rem;display:block}
+input[type=range]{width:100%;height:36px;accent-color:#f77f00}
+input[type=text],input[type=number],select,textarea{font:inherit;font-size:1.2rem;border:3px solid var(--v);border-radius:14px;padding:.3rem .6rem;background:var(--c);color:var(--ink);max-width:100%}
+.f1{width:5em;text-align:center}.ok{border-color:#2fbf4a!important;background:#d9ffe0!important;color:#12263a!important}.no{border-color:#ff5d5d!important;background:#ffe3e3!important;color:#12263a!important}
+.opt{display:block;width:100%;text-align:left;font-size:1.4rem;margin:.4rem 0;background:var(--c);border:3px solid var(--v);color:var(--ink)}.opt.good{background:var(--g);color:#12263a}.opt.bad{background:#ffc9c9;color:#12263a;animation:sk .4s}
+@keyframes sk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.fb{font-weight:800;min-height:1.5em}.stars{font-size:2.6rem;animation:bob 1.4s infinite}.badge{font-size:4rem}
+.row{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center;justify-content:center}.step{display:flex;gap:.7rem;align-items:center;padding:.3rem 0}.step span{font-size:2rem}
+.fx{position:fixed;top:-3rem;font-size:2rem;z-index:9;pointer-events:none;animation:fall 3.5s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.bar2{height:18px;background:var(--v);border-radius:99px;overflow:hidden}.bar2 i{display:block;height:100%;background:var(--g);transition:width .6s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:520px){body{font-size:18px}h1{font-size:1.7rem}.btn{padding:.5rem .8rem}}
+</style></head><body>
+<header><span>👦 Bimo &amp; Caca 👧</span><div id="pg"><div id="bar"></div></div></header>
+<main id="app"></main>
+<nav class="f"><button class="btn" id="bk">◀ Kembali</button><button class="btn" id="hm">🏠 Beranda</button><button class="btn" id="nx">Selanjutnya ▶</button></nav>
+<script>
+const $=s=>document.querySelector(s),A=$('#app');
+const S={p:'cover',m:0,g:0,name:'',tp:[0,0,0,0],st:{},ev:{i:0,a:[],on:0,done:0}};
+const NM={'🍎':'apel','🍬':'permen','⚽':'bola','🔵':'kelereng','🌸':'bunga'};
+const PG=[['cover','Beranda','🏠'],['id','Identitas','📘'],['cp','Capaian','🎯'],['tp','Tujuan','⭐'],['pet','Petunjuk','🧭'],['mat','Materi','📚'],['game','Permainan','🎮'],['lkpd','LKPD','🔍'],['kuis','Kuis','❓'],['eva','Evaluasi','🏆'],['ref','Refleksi','😀'],['end','Penghargaan','🎉']];
+const it=(e,n,x=0)=>Array.from({length:n},(_,i)=>`<span class="it ${i<x?'x':''}" data-i="${i}">${e}</span>`).join('');
+const bub=(w,t)=>`<div class="bub"><span class="av">${w=='B'?'👦':'👧'}</span><p><b>${w=='B'?'Bimo':'Caca'}:</b> ${t} <button class="sp" aria-label="Dengarkan" onclick="say(this.parentNode.innerText)">🔊</button></p></div>`;
+const say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace('🔊',''));u.lang='id-ID';u.rate=.85;speechSynthesis.speak(u)}catch(e){}};
+const X=(s,k)=>$(s).querySelectorAll('.it').forEach((n,i)=>n.classList.toggle('x',i<k));
+const sh=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
+const idx=()=>PG.findIndex(x=>x[0]==S.p);
+function go(p){S.p=p;R[p]();$('#bar').style.width=(idx()/(PG.length-1)*100)+'%';$('#bk').disabled=idx()<1;$('#nx').disabled=idx()>=PG.length-1;scrollTo(0,0)}
+$('#bk').onclick=()=>go(PG[idx()-1][0]);$('#nx').onclick=()=>go(PG[idx()+1][0]);$('#hm').onclick=()=>go('cover');
+function confetti(){const c=['🎉','⭐','🎊','✨','🌈'];for(let i=0;i<36;i++){const s=document.createElement('span');s.className='fx';s.textContent=c[i%5];s.style.left=Math.random()*95+'vw';s.style.animationDelay=Math.random()*1.5+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),5500)}}
+
+/* Kuis generik: satu soal per halaman, umpan balik langsung, jawaban tidak dibocorkan */
+function quiz(el,qs,key,fin){let i=0,ok=0,bad=0;
+const show=()=>{
+ if(i>=qs.length){const s=Math.max(1,Math.round(ok/qs.length*3));S.st[key]=s;fin&&fin();confetti();
+  el.innerHTML=`<div class="card c"><h2>🎉 Selesai!</h2><p>✅ Benar: <b>${ok}</b> &nbsp; ❌ Salah: <b>${bad}</b></p><div class="stars">${'⭐'.repeat(s)}</div>${bub('C','Terima kasih sudah bermain! Kamu hebat, terus berlatih ya!')}<button class="btn" id="rt">🔁 Main Lagi</button></div>`;$('#rt').onclick=()=>{i=ok=bad=0;show()};return}
+ const q=qs[i];let wr=0;
+ el.innerHTML=`<div class="card"><span class="pill">Soal ${i+1} dari ${qs.length}</span><p class="q">${q.t}</p><div class="box">${q.v||''}</div><p>👀 Amati gambarnya, lalu pikirkan dulu.</p><div id="ops">${sh(q.o.map((_,j)=>j)).map(j=>`<button class="btn opt" data-j="${j}">${q.o[j]}</button>`).join('')}</div><p class="fb" id="fb"></p><button class="btn hid" id="n2">${i+1<qs.length?'Soal Berikutnya ▶':'Lihat Hasil ▶'}</button></div>`;
+ $('#ops').onclick=ev=>{const b=ev.target.closest('.opt');if(!b||b.disabled)return;
+  if(+b.dataset.j==q.a){if(!wr)ok++;b.classList.add('good');document.querySelectorAll('.opt').forEach(x=>x.disabled=1);$('#fb').textContent='🌟 Hebat! Jawabanmu benar!';$('#n2').classList.remove('hid')}
+  else{if(!wr)bad++;wr++;b.classList.add('bad');b.disabled=1;$('#fb').textContent='Ayo coba lagi! Hitung benda yang masih tersisa. 💪'}};
+ $('#n2').onclick=()=>{i++;show()}};
+show()}
+
+const R={};
+R.cover=()=>{A.innerHTML=`<div class="card hero"><div class="chars"><span class="bob">👦</span><span class="bob d">🔢</span><span class="bob">👧</span></div><h1>PETUALANGAN SERU BELAJAR PENGURANGAN</h1><h2>Yuk, Belajar Menghitung Benda yang Tersisa!</h2><p>Matematika • Kelas 1 SD • Bab 3: Cerita Pengurangan</p>${bub('B','Halo! Aku Bimo.')}${bub('C','Aku Caca. Ayo berpetualang ke taman, rumah, kebun, dan sekolah!')}<button class="btn big" onclick="go('id')">▶ MULAI BELAJAR</button></div><div class="grid">${PG.slice(1).map(p=>`<button class="btn" onclick="go('${p[0]}')"><span>${p[2]}</span>${p[1]}</button>`).join('')}</div>`};
+R.id=()=>{const r=[['🏫','Satuan Pendidikan','Sekolah Dasar'],['➕','Mata Pelajaran','Matematika'],['🎒','Fase / Kelas','A / I (Satu)'],['📅','Semester','1 (Ganjil)'],['📖','Bab','3. Pengurangan sampai dengan 10'],['🧩','Topik','A. Cerita Pengurangan'],['⏰','Alokasi Waktu','2 JP (2 × 35 menit)']];
+A.innerHTML=`<div class="card"><h2>📘 Identitas Pembelajaran</h2><h1>PETUALANGAN SERU BELAJAR PENGURANGAN</h1><p>Yuk, Belajar Menghitung Benda yang Tersisa!</p>${r.map(x=>`<div class="step"><span>${x[0]}</span><div><small>${x[1]}</small><br><b>${x[2]}</b></div></div>`).join('')}${bub('B','Aku dan Caca akan menemanimu belajar!')}</div>`};
+R.cp=()=>{A.innerHTML=`<div class="card"><h2>🎯 Capaian Pembelajaran</h2><div class="chars">🔢➕➖</div><h3>Elemen Bilangan</h3><p>Murid menunjukkan pemahaman dan memiliki intuisi bilangan (number sense) pada bilangan cacah sampai 100; membaca, menulis, menentukan nilai tempat, membandingkan, mengurutkan, serta melakukan komposisi dan dekomposisi bilangan; melakukan operasi penjumlahan dan pengurangan menggunakan benda-benda konkret yang banyaknya sampai 20; serta menunjukkan pemahaman pecahan sebagai bagian dari keseluruhan.</p></div>`};
+R.tp=()=>{const T=[['🔎','Mengenali Cerita','Murid mampu mengidentifikasi jumlah benda mula-mula, jumlah benda yang diambil atau berkurang, serta jumlah yang ditanyakan dalam cerita pengurangan sampai dengan 10 secara tepat.'],['✋','Mengambil Benda','Murid mampu mempraktikkan pengurangan bilangan sampai dengan 10 menggunakan benda konkret dengan cara mengambil sebagian benda dan menghitung jumlah yang tersisa secara tepat.'],['✏️','Menulis Pengurangan','Murid mampu merepresentasikan cerita pengurangan sampai dengan 10 ke dalam bentuk gambar dan kalimat matematika sederhana dengan benar.'],['💬','Menjelaskan Hasil','Murid mampu menyelesaikan permasalahan cerita pengurangan sampai dengan 10 serta menjelaskan cara memperoleh hasilnya menggunakan bahasa sederhana.']];const d=S.tp.reduce((a,b)=>a+b,0);
+A.innerHTML=`<div class="card"><h2>⭐ Tujuan Pembelajaran</h2><p>Perjalananmu: <b>${d} dari 4</b> tujuan</p><div class="bar2"><i style="width:${d*25}%"></i></div></div>${T.map((t,i)=>`<div class="card"><h3>${t[0]} TP ${i+1}: ${t[1]} ${S.tp[i]?'✅':''}</h3><p>${t[2]}</p></div>`).join('')}`};
+R.pet=()=>{const P=[['▶️','Klik tombol MULAI untuk memulai petualangan belajar.'],['📖','Bacalah cerita dan materi bersama Bimo dan Caca.'],['🔊','Dengarkan atau baca penjelasan tentang pengurangan.'],['👀','Amati gambar benda yang tersedia.'],['🎮','Kerjakan permainan dengan memilih atau memindahkan benda.'],['✏️','Kerjakan LKPD dengan teliti.'],['❓','Mainkan kuis untuk menguji pemahamanmu.'],['🏆','Kerjakan evaluasi sendiri.'],['⭐','Lihat hasil belajarmu dan dapatkan bintang!']];
+A.innerHTML=`<div class="card"><h2>🧭 Petunjuk Penggunaan</h2>${P.map((p,i)=>`<div class="step"><span>${p[0]}</span><div><b>${i+1}.</b> ${p[1]}</div></div>`).join('')}<div class="row"><button class="btn" onclick="go('cover')">🏠 Beranda</button><button class="btn big" onclick="go('mat')">▶ Mulai Belajar</button></div></div>`};
+
+/* ===== MATERI ===== */
+const M=[];
+R.mat=()=>{const t=['Apa itu?','3 Bagian','Main Benda','Sehari-hari','Simbol'];A.innerHTML=`<div class="tabs">${t.map((x,i)=>`<button class="btn ${i==S.m?'on':''}" data-m="${i}">${i+1}. ${x}</button>`).join('')}</div><div id="mb"></div><div class="row"><button class="btn" id="pm">◀ Materi sebelumnya</button><button class="btn" id="nm">Materi berikutnya ▶</button></div>`;
+ document.querySelector('.tabs').onclick=e=>{const b=e.target.closest('[data-m]');if(b){S.m=+b.dataset.m;R.mat()}};$('#pm').disabled=S.m==0;$('#nm').disabled=S.m==4;$('#pm').onclick=()=>{S.m--;R.mat()};$('#nm').onclick=()=>{S.m++;R.mat()};M[S.m]($('#mb'))};
+M[0]=e=>{e.innerHTML=`<div class="card"><h3>1. Apa Itu Pengurangan?</h3><p>Pengurangan adalah mengurangi jumlah benda karena diambil, dipakai, dimakan, diberikan, atau pergi.</p>${bub('B','Awalnya aku punya 6 permen. Lalu aku memberikan 2 permen kepada Caca. Berapa permen yang tersisa?')}<p class="q">🤔 Amati dulu: ada berapa permen di awal?</p><div class="box" id="r0">${it('🍬',6)}</div><button class="btn" id="b0">Beri 2 permen ke Caca</button><div id="o0" class="hid"><div class="eq">6 - 2 = 4</div><p>🟦 <b>6</b> = jumlah mula-mula<br>🟧 <b>2</b> = jumlah yang diambil<br>🟩 <b>4</b> = jumlah yang tersisa</p></div></div>`;
+ $('#b0').onclick=()=>{X('#r0',2);$('#o0').classList.remove('hid');S.tp[0]=1}};
+M[1]=e=>{e.innerHTML=`<div class="card"><h3>2. Tiga Bagian Cerita Pengurangan</h3><p>Geser untuk mengubah ceritanya!</p><label>Mula-mula: <b id="va">7</b></label><input type="range" id="ra" min="1" max="10" value="7"><label>Diambil / berkurang: <b id="vb">2</b></label><input type="range" id="rb" min="0" max="7" value="2"><div class="box" id="r1"></div><div class="three"><div style="background:#a8e1fb">Mula-mula<b id="t1"></b>benda di awal</div><div style="background:#ffc98f">Diambil<b id="t2"></b>hilang / pergi</div><div style="background:#a6f0a6">Tersisa<b id="t3"></b>masih ada</div></div><div class="eq" id="q1"></div></div>`;
+ const ra=$('#ra'),rb=$('#rb'),u=()=>{const a=+ra.value;rb.max=a;if(+rb.value>a)rb.value=a;const b=+rb.value;$('#va').textContent=a;$('#vb').textContent=b;$('#r1').innerHTML=it('🍪',a,b);$('#t1').textContent=a;$('#t2').textContent=b;$('#t3').textContent=a-b;$('#q1').textContent=`${a} - ${b} = ${a-b}`;S.tp[0]=1};ra.oninput=rb.oninput=u;u()};
+M[2]=e=>{let em='🍎',n=7,k=2,xs=new Set;
+ e.innerHTML=`<div class="card"><h3>3. Main dengan Benda</h3><p>1️⃣ Pilih benda. 2️⃣ Pilih jumlah awal. 3️⃣ Pilih yang diambil. 4️⃣ Tekan AMBIL. Boleh juga klik bendanya!</p><div class="row">${Object.keys(NM).map(x=>`<button class="btn s" data-e="${x}">${x}</button>`).join('')}</div><label>Jumlah awal: <b id="vn">7</b></label><input type="range" id="rn" min="1" max="10" value="7"><label>Yang diambil: <b id="vk">2</b></label><input type="range" id="rk" min="0" max="7" value="2"><div class="row"><button class="btn big" id="ba">AMBIL ✋</button><button class="btn" id="bz">Ulang</button></div><div class="box clk" id="r2"></div><div class="eq" id="q2"></div></div>`;
+ const d=()=>{$('#r2').innerHTML=Array.from({length:n},(_,i)=>`<span class="it ${xs.has(i)?'x':''}" data-i="${i}">${em}</span>`).join('');$('#q2').textContent=`${n} ${NM[em]} - ${xs.size} ${NM[em]} = ${n-xs.size} ${NM[em]}`};
+ e.querySelector('.row').onclick=ev=>{const b=ev.target.closest('[data-e]');if(b){em=b.dataset.e;d()}};
+ $('#rn').oninput=()=>{n=+$('#rn').value;$('#vn').textContent=n;$('#rk').max=n;if(k>n){k=n;$('#rk').value=n;$('#vk').textContent=n}xs=new Set;d()};
+ $('#rk').oninput=()=>{k=+$('#rk').value;$('#vk').textContent=k};
+ $('#ba').onclick=()=>{xs=new Set(Array.from({length:k},(_,i)=>i));S.tp[1]=1;d()};$('#bz').onclick=()=>{xs=new Set;d()};
+ $('#r2').onclick=ev=>{const s=ev.target.closest('.it');if(!s)return;const i=+s.dataset.i;xs.has(i)?xs.delete(i):xs.add(i);S.tp[1]=1;d()};d()};
+M[3]=e=>{const ST=[['🍰 Cerita Kue','Ibu mempunyai 6 kue. Upe memakan 1 kue. Berapa kue yang tersisa?','🍰',6,1],['🚗 Cerita Mobil','Mula-mula ada 3 orang di dalam mobil. Sebanyak 3 orang turun dari mobil. Berapa orang yang masih ada di dalam mobil?','🧑',3,3],['🛝 Cerita Anak Bermain','Ada 6 anak sedang bermain. Kemudian 2 anak pulang. Berapa anak yang masih bermain?','🧒',6,2]];
+ e.innerHTML=`<h3>4. Pengurangan di Sekitar Kita</h3>`+ST.map((s,i)=>`<div class="card"><h3>${s[0]}</h3>${bub(i%2?'C':'B',s[1])}<div class="box" id="s${i}">${it(s[2],s[3])}</div><button class="btn" data-s="${i}">Lihat apa yang berubah</button><div class="eq" id="e${i}"></div></div>`).join('');
+ e.onclick=ev=>{const b=ev.target.closest('[data-s]');if(!b)return;const s=ST[b.dataset.s],i=b.dataset.s;X('#s'+i,s[4]);$('#e'+i).textContent=`${s[3]} - ${s[4]} = ${s[3]-s[4]}`+(s[3]==s[4]?' (tidak ada yang tersisa)':'')}};
+M[4]=e=>{const MT=[['🍎',5,2],['🐦',6,4],['🌸',9,3]],op=MT.map(m=>`${m[1]} - ${m[2]} = ${m[1]-m[2]}`);
+ e.innerHTML=`<div class="card"><h3>5. Mengenal Simbol Pengurangan</h3><p>➖ Tanda minus (-) artinya <b>dikurangi</b>.<br>🟰 Tanda sama dengan (=) artinya <b>hasilnya sama dengan</b>.</p><div class="box">${it('🍎',8,3)}</div><div class="eq">8 - 3 = 5</div><p>8 apel, 3 apel diberi tanda silang, 5 apel masih tersisa.</p></div><div class="card"><h3>🧩 Cocokkan gambar dengan kalimat</h3>${MT.map((m,i)=>`<div class="box">${it(m[0],m[1],m[2])}</div><div class="row" data-r="${i}">${op.map((_,j)=>op[(j+i)%3]).map(t=>`<button class="btn" data-t="${t}">${t}</button>`).join('')}</div><p class="fb" id="m${i}"></p>`).join('')}</div><div class="card c"><h3>📝 Rangkuman</h3><p>Pengurangan adalah kegiatan mengurangi jumlah benda. Kita dapat mengetahui hasil pengurangan dengan menghitung benda yang masih tersisa.</p><button class="btn big" onclick="go('game')">Main Game 🎮</button></div>`;
+ e.onclick=ev=>{const b=ev.target.closest('[data-t]');if(!b)return;const i=+b.parentNode.dataset.r;if(b.dataset.t==op[i]){b.classList.add('on');$('#m'+i).textContent='🌟 Hebat! Jawabanmu benar!'}else $('#m'+i).textContent='Ayo coba lagi! Hitung benda yang masih tersisa.'}};
+
+/* ===== GAME ===== */
+const G=[];
+R.game=()=>{const t=['Ambil dan Hitung!','Siapa yang Tersisa?','Pasangkan Cerita'];A.innerHTML=`<div class="card c"><h2>🎮 Permainan Seru</h2></div><div class="tabs">${t.map((x,i)=>`<button class="btn ${i==S.g?'on':''}" data-g="${i}">${i+1}. ${x}</button>`).join('')}</div><div id="gb"></div>`;
+ document.querySelector('.tabs').onclick=e=>{const b=e.target.closest('[data-g]');if(b){S.g=+b.dataset.g;R.game()}};G[S.g]($('#gb'))};
+G[0]=e=>{const RD=[['🍎',8,3],['⚽',6,2],['🍬',9,4]];let r=0,xs;
+ const ld=()=>{if(r>=RD.length){S.st.g1=3;S.tp[1]=1;confetti();e.innerHTML=`<div class="card c"><h2>🎉 Hebat!</h2><div class="stars">⭐⭐⭐</div>${bub('B','Kamu pandai mengambil dan menghitung!')}<button class="btn" id="rg">🔁 Main Lagi</button></div>`;$('#rg').onclick=()=>{r=0;ld()};return}
+  const [em,n,k]=RD[r];xs=new Set;e.innerHTML=`<div class="card"><span class="pill">Ronde ${r+1} dari ${RD.length}</span><p class="q">Ada ${n} ${NM[em]}. Ambil ${k} ${NM[em]}.</p><p>👆 Klik ${NM[em]} yang ingin kamu ambil.</p><div class="box clk" id="gx">${it(em,n)}</div><p class="fb" id="gf"></p><div class="eq" id="ge"></div><button class="btn hid" id="gn">Ronde Berikutnya ▶</button></div>`;
+  $('#gx').onclick=ev=>{const s=ev.target.closest('.it');if(!s||xs.size==k&&!s.classList.contains('x')&&$('#ge').textContent){return}const i=+s.dataset.i;
+   if(s.classList.contains('x')){s.classList.remove('x');xs.delete(i)}else if(xs.size<k){s.classList.add('x');xs.add(i)}else{$('#gf').textContent=`Kamu hanya boleh mengambil ${k}. Klik benda yang sudah silang untuk mengembalikan.`;return}
+   if(xs.size==k){$('#gf').textContent=`🌟 Hebat! Sekarang hitung yang tersisa: ${n-k}`;$('#ge').textContent=`${n} - ${k} = ${n-k}`;$('#gn').classList.remove('hid')}else{$('#gf').textContent=`Sudah diambil ${xs.size}, kurang ${k-xs.size} lagi.`;$('#ge').textContent='';$('#gn').classList.add('hid')}};
+  $('#gn').onclick=()=>{r++;ld()}};ld()};
+G[1]=e=>quiz(e,[{t:'Ada 7 kupu-kupu di taman. Sebanyak 2 kupu-kupu terbang. Berapa kupu-kupu yang tersisa?',v:it('🦋',7),o:['4','5','6'],a:1},{t:'Ada 8 bunga di kebun. Sebanyak 3 bunga dipetik. Berapa bunga yang tersisa?',v:it('🌸',8),o:['5','6','4'],a:0},{t:'Ada 5 ikan di kolam. Sebanyak 1 ikan pergi. Berapa ikan yang tersisa?',v:it('🐟',5),o:['3','4','6'],a:1}],'g2');
+G[2]=e=>quiz(e,[{t:'Ada 9 burung. Sebanyak 4 burung terbang. Pilih kalimat matematikanya!',v:it('🐦',9),o:['9 - 4 = 5','9 - 2 = 7','8 - 4 = 4'],a:0},{t:'Ada 6 apel. Sebanyak 2 apel dimakan. Pilih kalimat matematikanya!',v:it('🍎',6),o:['6 - 2 = 4','6 - 3 = 3','7 - 2 = 5'],a:0},{t:'Ada 8 bola. Sebanyak 5 bola menggelinding pergi. Pilih kalimat matematikanya!',v:it('⚽',8),o:['8 - 5 = 3','8 - 3 = 5','9 - 5 = 4'],a:0}],'g3');
+
+/* ===== LKPD ===== */
+const LK=[['LKPD 1: Lengkapi Ceritanya!',[['Mula-mula ada 7 kelereng. Halim mengambil 2 kelereng. Sekarang tersisa ... kelereng.','🔵',7,['Tersisa'],[5]],['Mula-mula ada 6 kupu-kupu di bunga. Ada 2 kupu-kupu terbang. Sekarang tersisa ... kupu-kupu.','🦋',6,['Tersisa'],[4]]]],
+['LKPD 2: Amati Gambar!',[['A. Ada 9 telur. Sebanyak 4 telur diambil. Berapa telur yang tersisa?','🥚',9,['Mula-mula','Diambil','Tersisa'],[9,4,5]],['B. Ada 7 kepik. Sebanyak 1 kepik terbang. Berapa kepik yang tersisa?','🐞',7,['Mula-mula','Diambil','Tersisa'],[7,1,6]],['C. Ada 9 apel. Sebanyak 2 apel dimakan. Berapa apel yang tersisa?','🍎',9,['Mula-mula','Diambil','Tersisa'],[9,2,7]]]],
+['LKPD 3: Tuliskan Operasi Pengurangannya!',[['A. 7 telur, 3 telur diambil.','🥚',7,['Mula-mula','Diambil','Tersisa','Kalimat'],[7,3,4,'7-3=4']],['B. 8 burung, 2 burung terbang.','🐦',8,['Mula-mula','Diambil','Tersisa','Kalimat'],[8,2,6,'8-2=6']],['C. 7 bola, 2 bola diambil.','⚽',7,['Mula-mula','Diambil','Tersisa','Kalimat'],[7,2,5,'7-2=5']]]]];
+R.lkpd=()=>{A.innerHTML=`<div class="card hero"><h2>🕵️ MISI DETEKTIF ANGKA: AYO SELESAIKAN CERITA PENGURANGAN!</h2><div class="row"><label>Nama kelompok <input type="text" id="lk1"></label><label>Nama anggota <input type="text" id="lk2"></label><label>Kelas <input type="text" id="lk3" size="6"></label></div></div>`+LK.map((s,a)=>`<div class="card"><h3>${s[0]}</h3>${s[1].map((q,b)=>`<div class="box" style="text-align:left"><p class="q">${q[0]}</p><div class="c">${it(q[1],q[2])}</div><div class="row">${q[3].map((l,c)=>`<label>${l}<br><input type="text" class="f1 ${l=='Kalimat'?'':'n'}" style="${l=='Kalimat'?'width:7em':''}" inputmode="${l=='Kalimat'?'text':'numeric'}" id="f${a}_${b}_${c}" autocomplete="off"></label>`).join('')}</div></div>`).join('')}</div>`).join('')+`<div class="card c"><button class="btn big" id="pk">🔎 PERIKSA JAWABAN</button><div class="eq" id="ls"></div><p class="fb" id="lf"></p></div>`;
+ $('#pk').onclick=()=>{let t=0,c=0;LK.forEach((s,a)=>s[1].forEach((q,b)=>q[4].forEach((ans,k)=>{const f=$(`#f${a}_${b}_${k}`);t++;const ok=f.value.replace(/[\s−–]/g,'')==String(ans);f.classList.remove('ok','no');if(f.value.trim()==='')return;f.classList.add(ok?'ok':'no');if(ok)c++})));
+  $('#ls').textContent=`Skor: ${c} dari ${t}`;S.tp[2]=1;S.st.lkpd=c==t?3:c>t/2?2:1;
+  $('#lf').textContent=c==t?'🌟 Luar biasa! Semua jawabanmu benar!':'Kotak hijau sudah benar. Kotak merah boleh kamu perbaiki, lalu tekan PERIKSA lagi. Kamu pasti bisa! 💪';if(c==t)confetti()}};
+
+/* ===== KUIS ===== */
+R.kuis=()=>{A.innerHTML=`<div class="card hero"><h2>❓ KUIS CERDAS BERSAMA BIMO DAN CACA!</h2></div><div id="kz"></div>`;
+ quiz($('#kz'),[{t:'Bimo memiliki 8 permen. Ia memberikan 3 permen kepada Caca. Berapa permen Bimo yang tersisa?',v:it('🍬',8,3),o:['4','5','6'],a:1},{t:'Ada 7 burung di pohon. Kemudian 2 burung terbang. Berapa burung yang tersisa?',v:it('🐦',7),o:['4','5','6'],a:1},{t:'Ibu mempunyai 9 apel. Sebanyak 4 apel dimakan. Berapa apel yang tersisa?',v:it('🍎',9),o:['5','6','4'],a:0},{t:'Ada 6 bola. Sebanyak 3 bola diambil. Kalimat matematika yang benar adalah ...',v:it('⚽',6,3),o:['6 - 3 = 3','6 - 2 = 4','6 - 1 = 5'],a:0},{t:'Ada 5 kupu-kupu. Semuanya terbang. Berapa kupu-kupu yang tersisa?',v:it('🦋',5),o:['1','0','5'],a:1}],'kuis',()=>{S.tp[3]=1})};
+
+/* ===== EVALUASI ===== */
+const EV=[['Ada 6 anak bermain bersama. Ada 3 anak laki-laki. Sisanya anak perempuan. Berapa anak perempuan?','🧒',6,0,['3']],['Ada 6 anak memakai kaus biru dan putih. Sebanyak 4 anak memakai kaus biru. Berapa anak memakai kaus putih?','👕',6,0,['2']],['Mula-mula ada 9 burung di ranting. Kemudian 2 burung terbang. Berapa burung yang tersisa?','🐦',9,0,['7']],['Rina memiliki 8 balon. Kemudian 2 balon meletus. Berapa balon yang tersisa?','🎈',8,0,['6']],['Ada 10 bintang. Sebanyak 2 bintang diberi tanda silang. Berapa bintang yang tersisa?','⭐',10,2,['8']],['Ada 9 bola. Sebanyak 3 bola diberi tanda silang. Berapa bola yang tersisa?','⚽',9,3,['6']],['Ada 8 kepik. Sebanyak 2 kepik diberi tanda silang. Berapa kepik yang tersisa?','🐞',8,2,['6']],['Ada 7 wortel. Sebanyak 3 wortel diberi tanda silang. Lengkapi:','🥕',7,3,['3','4']],['Ada 9 stroberi. Sebanyak 4 stroberi diberi tanda silang. Lengkapi:','🍓',9,4,['4','5']],['Ada 6 pisang. Sebanyak 2 pisang diberi tanda silang. Lengkapi:','🍌',6,2,['2','4']]];
+R.eva=()=>{const E=S.ev;
+ if(!E.on){A.innerHTML=`<div class="card c hero"><h2>🏆 TANTANGAN AKHIR: AKU BISA MENGURANGI!</h2><div class="chars">🧠✨</div><p>Kerjakan sendiri ya! Ada 10 soal. Setiap soal benar mendapat 10 poin.</p><p>Siapa namamu?</p><input type="text" id="nm" value="${S.name}" placeholder="Tulis namamu"><br><button class="btn big" id="go1">Mulai ▶</button></div>`;$('#go1').onclick=()=>{S.name=$('#nm').value.trim()||'Murid Hebat';E.on=1;E.i=0;E.a=[];E.done=0;R.eva()};return}
+ if(E.done)return res();
+ const q=EV[E.i],two=q[4].length==2,v=E.a[E.i]||[];
+ A.innerHTML=`<div class="card"><span class="pill">Soal ${E.i+1} dari 10</span><div class="bar2"><i style="width:${(E.i+1)*10}%"></i></div><p class="q">${q[0]}</p><div class="box">${it(q[1],q[2],q[3])}</div><div class="c" style="font-size:1.6rem">${two?`${q[2]} - <input type="text" inputmode="numeric" class="f1" id="e0" value="${v[0]||''}"> = <input type="text" inputmode="numeric" class="f1" id="e1" value="${v[1]||''}">`:`Jawabanku: <input type="text" inputmode="numeric" class="f1" id="e0" value="${v[0]||''}">`}</div><p class="fb" id="ef"></p><div class="row"><button class="btn" id="ep" ${E.i?'':'disabled'}>◀ Sebelumnya</button>${E.i<9?'<button class="btn" id="en">Berikutnya ▶</button>':'<button class="btn big" id="ec">✅ PERIKSA</button>'}</div></div>`;
+ const sv=()=>{E.a[E.i]=q[4].map((_,k)=>($('#e'+k).value||'').trim())};
+ $('#ep').onclick=()=>{sv();E.i--;R.eva()};if($('#en'))$('#en').onclick=()=>{sv();E.i++;R.eva()};
+ if($('#ec'))$('#ec').onclick=()=>{sv();const m=EV.map((_,i)=>i).filter(i=>!E.a[i]||E.a[i].some(x=>x===''));if(m.length){$('#ef').textContent='Masih ada soal kosong: nomor '+m.map(i=>i+1).join(', ')+'. Ayo lengkapi dulu!';return}E.done=1;S.tp[3]=1;R.eva()}};
+function res(){const E=S.ev,b=EV.filter((q,i)=>q[4].every((x,k)=>E.a[i][k]==x)).length,n=b*10;S.st.eva=n;
+ const m=n>=90?'Luar biasa! Kamu hebat sekali dalam pengurangan!':n>=80?'Hebat! Kamu sudah memahami pengurangan dengan baik!':n>=70?'Bagus! Terus berlatih agar semakin pintar!':'Jangan menyerah! Yuk, belajar dan mencoba lagi bersama Bimo dan Caca!';
+ A.innerHTML=`<div class="card c"><h2>🏆 Hasil Tantanganmu</h2><h1>${S.name}</h1><p>✅ Jawaban benar: <b>${b}</b> &nbsp; ❌ Jawaban salah: <b>${10-b}</b></p><div class="eq">Nilai akhir: ${n}</div><div class="stars">${'⭐'.repeat(Math.max(1,Math.round(n/34)))}</div><p class="q">${m}</p>${bub('C','Terima kasih sudah berusaha. Kamu keren!')}<div class="row"><button class="btn" id="re">🔁 Coba Lagi</button><button class="btn big" onclick="go('ref')">Lanjut Refleksi ▶</button></div></div>`;if(n>=70)confetti();$('#re').onclick=()=>{E.on=1;E.i=0;E.a=[];E.done=0;R.eva()}}
+
+/* ===== REFLEKSI ===== */
+R.ref=()=>{const Q=['Apakah kamu sudah memahami arti pengurangan?','Apakah kamu bisa menghitung benda yang tersisa?','Apakah kamu senang belajar dengan gambar dan permainan?'];
+ A.innerHTML=`<div class="card"><h2>😀 Refleksi</h2>${Q.map((q,i)=>`<p class="q">${i+1}. ${q}</p><div class="row" data-q="${i}">${['😀 Sangat senang dan sudah paham','🙂 Senang dan cukup paham','😐 Masih perlu belajar lagi'].map(t=>`<button class="btn" style="font-size:.95rem">${t}</button>`).join('')}</div>`).join('')}<p class="q">4. Bagian mana yang paling kamu sukai?</p><select id="fv"><option>Materi</option><option>Permainan</option><option>LKPD</option><option>Kuis</option><option>Evaluasi</option></select><p class="q">Hal apa yang paling kamu ingat dari pembelajaran hari ini?</p><textarea id="ing" rows="3" style="width:100%" placeholder="Tulis di sini..."></textarea><div class="row"><button class="btn big" id="sr">💾 Simpan Jawabanku</button></div><p class="fb" id="rf"></p></div>`;
+ A.onclick=e=>{const b=e.target.closest('[data-q] .btn');if(b){b.parentNode.querySelectorAll('.btn').forEach(x=>x.classList.remove('on'));b.classList.add('on')}};
+ $('#sr').onclick=()=>{$('#rf').innerHTML='Terima kasih! Jawabanmu sudah tersimpan. 💛 <button class="btn" onclick="go(\'end\')">Lihat Penghargaan 🎉</button>'}};
+
+/* ===== PENGHARGAAN ===== */
+R.end=()=>{const L=[['g1','Game Ambil dan Hitung'],['g2','Game Siapa yang Tersisa'],['g3','Game Pasangkan Cerita'],['lkpd','LKPD'],['kuis','Kuis'],['eva','Evaluasi']],all=['lkpd','kuis','eva'].every(k=>S.st[k]);
+ const stars=L.reduce((a,l)=>a+(S.st[l[0]]?(l[0]=='eva'?Math.max(1,Math.round(S.st.eva/34)):S.st[l[0]]):0),0);
+ A.innerHTML=`<div class="card hero"><div class="badge">${all?'🏅':'🔒'}</div><h1>${all?'Lencana "Jago Pengurangan"':'Lencana belum terbuka'}</h1><p>${all?'':'Selesaikan LKPD, Kuis, dan Evaluasi untuk membuka lencana ini.'}</p><div class="stars">${'⭐'.repeat(stars)||'☆'}</div><p><b>${stars}</b> bintang belajar terkumpul</p></div><div class="card">${L.map(l=>`<div class="step"><span>${S.st[l[0]]?'✅':'⬜'}</span>${l[1]}</div>`).join('')}</div>${bub('B','Yeay! Petualanganmu berhasil! Sekarang kamu sudah bisa menghitung benda yang tersisa.')}${bub('C','Terus semangat belajar, ya!')}<div class="row"><button class="btn big" onclick="go('cover')">🏠 Kembali ke Beranda</button></div>`;confetti()};
+go('cover');
+</script></body></html>
